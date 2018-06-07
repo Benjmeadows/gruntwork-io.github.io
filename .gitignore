@@ -27,3 +27,7 @@ _site/
 terraform.tfstate
 terraform.tfvars
 *.tfstate*
+/bin/
+
+# Eclipse Gradle Build Files
+/cucumbertests/.settings
