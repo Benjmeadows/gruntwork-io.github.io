@@ -30,4 +30,4 @@ terraform.tfvars
 /bin/
 
 # Eclipse Gradle Build Files
-/cucumbertests/.settings
+/cucumbertests/.settings/
