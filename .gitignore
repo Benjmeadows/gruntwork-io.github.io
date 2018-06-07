@@ -28,3 +28,6 @@ terraform.tfstate
 terraform.tfvars
 *.tfstate*
 /bin/
+
+# EclipseFiles
+**/.externalToolBuilders/
