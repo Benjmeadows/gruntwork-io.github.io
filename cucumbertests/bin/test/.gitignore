@@ -1,5 +1,4 @@
-/GebConfig.groovy
-/chromedriver
+/apiutils/
 /features/
-/page/
 /steps/
+/page/

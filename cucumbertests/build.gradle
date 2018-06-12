@@ -13,6 +13,9 @@ dependencies {
 	testCompile "org.gebish:geb-core:2.1"
 	testCompile "info.cukes:cucumber-groovy:1.2.5"
 	testCompile "info.cukes:gherkin:2.12.2"
+	
+	testCompile "org.apache.httpcomponents:httpclient:4.5.5"
+
 }
 
 configurations {
