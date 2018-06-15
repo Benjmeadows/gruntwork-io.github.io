@@ -26,11 +26,11 @@ public APIUtilities(String url) {
 
 public String returnResponseFromGetAsString() throws IOException {
     HttpGet httpget = new HttpGet(url);
-    this.getResponse(httpget);
+    this.setResponse(httpget);
     return response;
 	}
 
-private void getResponse(HttpRequestBase requestTypeObject) throws IOException{
+private void setResponse(HttpRequestBase requestTypeObject) throws IOException{
 	httpclient = HttpClients.createDefault();
 	try {
 		ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
