@@ -6,9 +6,11 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
@@ -31,7 +33,13 @@ public String returnResponseFromGetAsString() throws IOException {
 	}
 
 private void setResponse(HttpRequestBase requestTypeObject) throws IOException{
-	httpclient = HttpClients.createDefault();
+	int timeout = 5;
+	RequestConfig config = RequestConfig.custom()
+			  .setConnectTimeout(timeout * 1000)
+			  .setConnectionRequestTimeout(timeout * 1000)
+			  .setSocketTimeout(timeout * 1000).build();
+			httpclient = HttpClientBuilder.create().setDefaultRequestConfig(config).build();
+
 	try {
 		ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
 
