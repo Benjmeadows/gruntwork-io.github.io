@@ -9,3 +9,5 @@ I would like to use Cucumber and API libraries together
     Then I get the title of the article "Bee"
     When I expand my search on wikipedia's API endpoint to allow 10 results for "bee"
     Then The response contains some facts about Beer
+    When I expand my search on wikipedia's API endpoint to allow 10 results for 'NASA'
+    Then I get articles containing the word 'NASA'

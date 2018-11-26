@@ -12,26 +12,26 @@ import org.openqa.selenium.OutputType
 def theBrowser
 
 Before() { scenario ->
-	if(!binding.hasVariable('browser')) {
-		theBrowser = new Browser()
-		bindingUpdater = new BindingUpdater(binding, theBrowser)
-		bindingUpdater.initialize()
-	} else {
+	//if(!binding.hasVariable('browser')) {
+		//theBrowser = new Browser()
+		//bindingUpdater = new BindingUpdater(binding, theBrowser)
+		//bindingUpdater.initialize()
+	//} else {
 		// save for later screenshot taking
-		theBrowser = browser
-	}
+		//theBrowser = browser
+	//}
 }
 
 After() { scenario ->
-	bindingUpdater?.remove()
+	//bindingUpdater?.remove()
 	// embed screenshot into cucumber report
-	if(scenario.failed) {
-		try {
-			scenario.embed(theBrowser.driver.getScreenshotAs(OutputType.BYTES), "image/png")
-		} catch(WebDriverException e) {
+	//if(scenario.failed) {
+		//try {
+		//	scenario.embed(theBrowser.driver.getScreenshotAs(OutputType.BYTES), "image/png")
+		//} catch(WebDriverException e) {
 			// sometime firefox runs out of memory trying to take a screenshot, not a big deal so ignore
-		} catch(MissingMethodException e) {
+		//} catch(MissingMethodException e) {
 			// HTMLUnit doesn't support screenshots
-		}
-	}
+		//}
+	//}
 }

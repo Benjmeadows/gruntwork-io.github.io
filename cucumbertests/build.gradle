@@ -36,7 +36,7 @@ task cucumber(dependsOn: project.tasks.getByName('cleanIt')) {
 			classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
 			args = [
 					'--plugin', 'pretty',
-					'--tags', '@Geb',
+					'--tags', '@api',
 					'--glue', 'src/test/groovy/steps',
 					'--format', 'html:build/cucumber-html-report', // html
 					'--format', 'json:build/cucumber-report.json',

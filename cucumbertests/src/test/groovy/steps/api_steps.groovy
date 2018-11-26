@@ -33,6 +33,17 @@ When(~/I expand my search on wikipedia's API endpoint to allow 10 results for "b
 	response = apiUtils.returnResponseFromGetAsString()
 }
 
+When(~/I expand my search on wikipedia's API endpoint to allow 10 results for '(.*?)'/) { text ->
+	def apiUtils = new APIUtilities("https://en.wikipedia.org/w/api.php?action=opensearch&search=" + text + "&limit=10&format=json")
+	response = apiUtils.returnResponseFromGetAsString()
+}
+
+Then(~/I get articles containing the word '(.*?)'/)  { text ->
+	def jsonSlurper = new JsonSlurper()
+	def jsonInfoAboutBees = jsonSlurper.parseText(response)
+	assert jsonInfoAboutBees[1][0].contains(text)
+}
+
 Then(~/I get the title of the article "Bee"/)  { ->
 	def jsonSlurper = new JsonSlurper()
 	def jsonInfoAboutBees = jsonSlurper.parseText(response)
