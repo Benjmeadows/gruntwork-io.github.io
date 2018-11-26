@@ -1,3 +1,4 @@
+package steps
 import geb.Browser
 import geb.binding.BindingUpdater
 

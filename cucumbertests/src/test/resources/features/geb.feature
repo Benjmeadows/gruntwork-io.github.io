@@ -1,8 +1,9 @@
+@browser
 Feature: Cucumber and Geb
-
-As a software development engineer in test at MGIC
-I would like to use Cucumber and Geb together
-So I can have greater test capability than what UFT offers us now
+  
+  As a software development engineer in test at MGIC
+  I would like to use Cucumber and Geb together
+  So I can have greater test capability than what UFT offers us now
 
   Scenario: Visit Cross Browser Automation page from the Home page
     Given I am on the "Grunt Home" page

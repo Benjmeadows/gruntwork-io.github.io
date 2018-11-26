@@ -1,11 +1,11 @@
+@api
 Feature: Cucumber and API
 
 As a software development engineer in test at MGIC
 I would like to use Cucumber and API libraries together
-So I can have greater test capability than what UFT offers us now
 
   Scenario: Visit a site with an API and Test
-    When I ping the Hello World endpoint
-    Then I get the response "hello : world"
-    When I ping the base URL
-    Then I get a response that has the defaultUser's info
+    When I visit wikipedia's API endpoint and I search for "bee"; with a limit of 1
+    Then I get the title of the article "Bee"
+    When I expand my search on wikipedia's API endpoint to allow 10 results for "bee"
+    Then The response contains some facts about Beer

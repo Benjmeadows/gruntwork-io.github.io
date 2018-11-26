@@ -22,7 +22,13 @@ configurations {
 	cucumberRuntime { extendsFrom testRuntime }
 }
 
-task cucumber() {
+task cleanIt(){
+	dependsOn clean
+    println 'Hello'
+}
+
+
+task cucumber(dependsOn: project.tasks.getByName('cleanIt')) {
 	dependsOn testClasses
 	doLast {
 		javaexec {
@@ -30,7 +36,7 @@ task cucumber() {
 			classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
 			args = [
 					'--plugin', 'pretty',
-					'--tags', '~@wip',
+					'--tags', '@Geb',
 					'--glue', 'src/test/groovy/steps',
 					'--format', 'html:build/cucumber-html-report', // html
 					'--format', 'json:build/cucumber-report.json',

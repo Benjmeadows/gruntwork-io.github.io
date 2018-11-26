@@ -7,7 +7,7 @@ class GruntHomePage extends Page {
 	static content = {
 		headings { $('a.navbar-brand') }
 		howItWorksButton { $('div.collapse.navbar-collapse').find('a[href$="how-it-works"]') }
-	}
+		}
 	
 	def verifyPageHeading(){
 	      assert headings.text() == "Gruntwork\n.io"     
@@ -16,5 +16,5 @@ class GruntHomePage extends Page {
 	def clickHowItWorks(){
 	    howItWorksButton.click()
 	}
-
+	
 }
